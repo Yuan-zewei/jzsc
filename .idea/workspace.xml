@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="72cd49e5-2c57-4b53-a4da-637da6b57ea1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Master/temp10.py" beforeDir="false" afterPath="$PROJECT_DIR$/Master/temp10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Master/temp14.py" beforeDir="false" afterPath="$PROJECT_DIR$/Master/temp14.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biz/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/biz/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/Mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/Mysql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hq_toke.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/aes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/cipher-core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/crypto-js.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/docs/QuickStartGuide.wiki" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-base64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-hex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-latin1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-utf16.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-utf8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/evpkdf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/format-hex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/format-openssl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-md5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-ripemd160.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha224.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha256.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha384.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha512.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/lib-typedarrays.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/md5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-cfb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-ctr-gladman.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-ctr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-ecb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-ofb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-ansix923.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-iso10126.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-iso97971.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-nopadding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-pkcs7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-zeropadding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pbkdf2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/rabbit-legacy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/rabbit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/rc4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/ripemd160.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha224.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha256.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha384.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha512.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/tripledes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/x64-core.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp11.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/dbmysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/dbmysql.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="xinjianshe1.3" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Tzwl8fG6Dd9HWXhWHRCZdbTTLj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/测试" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Desktop\新建文件夹\xinjianshe1.3\测试" />
+      <recent name="C:\Users\admin\Desktop\新建文件夹\xinjianshe1.3" />
+      <recent name="C:\Users\admin\Desktop\新建文件夹\xinjianshe1.3\img" />
+      <recent name="C:\Users\admin\PycharmProjects\xinjianshe\out_img" />
+      <recent name="C:\Users\admin\PycharmProjects\xinjianshe" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\PycharmProjects\xinjianshe\easy_img" />
+      <recent name="C:\Users\admin\PycharmProjects\xinjianshe" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.temp2">
+    <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="xinjianshe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/测试" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试/1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="base" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="xinjianshe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/biz" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/biz/base.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="chaojiying" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="xinjianshe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/测试" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试/chaojiying.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="temp1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="xinjianshe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/测试" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\admin\Desktop\新建文件夹 (4)\xinjianshe1.3\测试\hq_token.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="temp2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="xinjianshe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/测试" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/测试/temp2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.temp2" />
+        <item itemvalue="Python.temp1" />
+        <item itemvalue="Python.base" />
+        <item itemvalue="Python.1" />
+        <item itemvalue="Python.chaojiying" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72cd49e5-2c57-4b53-a4da-637da6b57ea1" name="Default Changelist" comment="" />
+      <created>1574476379050</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574476379050</updated>
+      <workItem from="1574476380355" duration="16709000" />
+      <workItem from="1574649311886" duration="25095000" />
+      <workItem from="1574729051159" duration="216000" />
+      <workItem from="1574729508173" duration="12634000" />
+      <workItem from="1574757667769" duration="5802000" />
+      <workItem from="1574815696715" duration="24913000" />
+      <workItem from="1574850564585" duration="25686000" />
+      <workItem from="1574988491636" duration="27482000" />
+      <workItem from="1575079805812" duration="571000" />
+      <workItem from="1575081130625" duration="6191000" />
+      <workItem from="1575105676122" duration="3428000" />
+      <workItem from="1575247965777" duration="20926000" />
+      <workItem from="1575339839916" duration="2610000" />
+      <workItem from="1575342478172" duration="5471000" />
+      <workItem from="1575351777392" duration="8193000" />
+      <workItem from="1575369135702" duration="2112000" />
+      <workItem from="1575419844515" duration="12962000" />
+      <workItem from="1575437678241" duration="10834000" />
+      <workItem from="1575506476678" duration="1935000" />
+      <workItem from="1575517006698" duration="11629000" />
+      <workItem from="1575593961420" duration="31876000" />
+      <workItem from="1575679652311" duration="48757000" />
+      <workItem from="1575885242968" duration="28541000" />
+      <workItem from="1575971421299" duration="13437000" />
+      <workItem from="1576112465947" duration="12568000" />
+      <workItem from="1576137531423" duration="8756000" />
+      <workItem from="1576197912158" duration="14269000" />
+      <workItem from="1576215131930" duration="1628000" />
+      <workItem from="1576217313998" duration="11000" />
+      <workItem from="1576225957330" duration="20687000" />
+      <workItem from="1576487199949" duration="2284000" />
+      <workItem from="1576543709920" duration="6535000" />
+      <workItem from="1576555101747" duration="518000" />
+      <workItem from="1576563428912" duration="1504000" />
+      <workItem from="1576574268840" duration="1304000" />
+      <workItem from="1576656355523" duration="919000" />
+      <workItem from="1576657302124" duration="512000" />
+      <workItem from="1576658517121" duration="3621000" />
+      <workItem from="1576716439154" duration="6079000" />
+      <workItem from="1576722886816" duration="8211000" />
+      <workItem from="1576735586268" duration="400000" />
+      <workItem from="1576736010811" duration="1249000" />
+    </task>
+    <task id="LOCAL-00001" summary="优化selenuim以及增加人员的删除">
+      <created>1575614418495</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575614418495</updated>
+    </task>
+    <task id="LOCAL-00002" summary="删除没必要存在的文件，将破解源码加密的方法放进初始化文件当中">
+      <created>1575614956627</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575614956627</updated>
+    </task>
+    <task id="LOCAL-00003" summary="增加换IP方法，以及设置整套程序都是同个ip">
+      <created>1575625999394</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575625999394</updated>
+    </task>
+    <task id="LOCAL-00004" summary="增加注释.">
+      <created>1575627613527</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575627613527</updated>
+    </task>
+    <task id="LOCAL-00005" summary="修改获取ip的方法，增加多线程获取token的测试，修改数据库中存储有效期的问题，以及修改了若干bug">
+      <created>1575964872506</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575964872506</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="优化selenuim以及增加人员的删除" />
+    <MESSAGE value="删除没必要存在的文件，将破解源码加密的方法放进初始化文件当中" />
+    <MESSAGE value="增加换IP方法，以及设置整套程序都是同个ip" />
+    <MESSAGE value="增加注释." />
+    <MESSAGE value="修改获取ip的方法，增加多线程获取token的测试，修改数据库中存储有效期的问题，以及修改了若干bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改获取ip的方法，增加多线程获取token的测试，修改数据库中存储有效期的问题，以及修改了若干bug" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dao/Mysql.py</url>
+          <line>304</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dao/Mysql.py</url>
+          <line>372</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Master/temp10.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="token" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$temp10.coverage" NAME="temp10 Coverage Results" MODIFIED="1576310212991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Master" />
+    <SUITE FILE_PATH="coverage/xinjianshe$asd.coverage" NAME="asd Coverage Results" MODIFIED="1575276269172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$img_1.coverage" NAME="img_1 Coverage Results" MODIFIED="1576286454467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$dianji.coverage" NAME="dianji Coverage Results" MODIFIED="1576719488537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$temp3.coverage" NAME="temp3 Coverage Results" MODIFIED="1576547490897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试" />
+    <SUITE FILE_PATH="coverage/xinjianshe$temp14.coverage" NAME="temp14 Coverage Results" MODIFIED="1574904832457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Master" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$b.coverage" NAME="b Coverage Results" MODIFIED="1576659472474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$asdd.coverage" NAME="asdd Coverage Results" MODIFIED="1576200421049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/img" />
+    <SUITE FILE_PATH="coverage/xinjianshe$asasasa.coverage" NAME="asasasa Coverage Results" MODIFIED="1574912834481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_2$base.coverage" NAME="base Coverage Results" MODIFIED="1575343138692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/biz" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$a.coverage" NAME="a Coverage Results" MODIFIED="1576656735336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$temp1.coverage" NAME="temp1 Coverage Results" MODIFIED="1576726549901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$temp.coverage" NAME="temp Coverage Results" MODIFIED="1576551664882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试" />
+    <SUITE FILE_PATH="coverage/xinjianshe$ceshi.coverage" NAME="ceshi Coverage Results" MODIFIED="1575282497777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$chaojiying.coverage" NAME="chaojiying Coverage Results" MODIFIED="1576720625313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试" />
+    <SUITE FILE_PATH="coverage/xinjianshe$.coverage" NAME="山东省的所多 Coverage Results" MODIFIED="1574825943574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Master" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$c.coverage" NAME="c Coverage Results" MODIFIED="1576661777615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe$temp13.coverage" NAME="temp13 Coverage Results" MODIFIED="1574487003744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Master" />
+    <SUITE FILE_PATH="coverage/xinjianshe$sdad.coverage" NAME="sdad Coverage Results" MODIFIED="1574993948385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$1.coverage" NAME="1 Coverage Results" MODIFIED="1576722029537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_2$temp10.coverage" NAME="temp10 Coverage Results" MODIFIED="1575358470016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Master" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$sajkdfh.coverage" NAME="sajkdfh Coverage Results" MODIFIED="1575425486764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$asasasa.coverage" NAME="asasasa Coverage Results" MODIFIED="1575679448538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$black_wi.coverage" NAME="black_wi Coverage Results" MODIFIED="1576210497648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/img_temp" />
+    <SUITE FILE_PATH="coverage/xinjianshe$temp10.coverage" NAME="temp10 Coverage Results" MODIFIED="1575282965708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Master" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$hq_toke.coverage" NAME="hq_toke Coverage Results" MODIFIED="1576033477622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe$sajkdfh.coverage" NAME="sajkdfh Coverage Results" MODIFIED="1575077515662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$temp14.coverage" NAME="temp14 Coverage Results" MODIFIED="1576135860928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Master" />
+    <SUITE FILE_PATH="coverage/xinjianshe$temp.coverage" NAME="temp Coverage Results" MODIFIED="1574921664318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe$temp11.coverage" NAME="temp11 Coverage Results" MODIFIED="1574924943309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Master" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_2$asasasa.coverage" NAME="asasasa Coverage Results" MODIFIED="1575360188853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$temp11.coverage" NAME="temp11 Coverage Results" MODIFIED="1576024875543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$base.coverage" NAME="base Coverage Results" MODIFIED="1576723775022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/biz" />
+    <SUITE FILE_PATH="coverage/xinjianshe$reqq.coverage" NAME="reqq Coverage Results" MODIFIED="1574925828808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe$hgjk.coverage" NAME="hgjk Coverage Results" MODIFIED="1575270668781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xinjianshe1_3$temp2.coverage" NAME="temp2 Coverage Results" MODIFIED="1576734662936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/测试" />
+  </component>
+</project>
