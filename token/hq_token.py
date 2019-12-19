@@ -239,7 +239,7 @@ def selenu(url,qyname,ip):
 def ipz():
     # 设置代理连接
     resp = requests.get(
-        'http://api.ip.data5u.com/dynamic/get.html?order=dac8945cfa0501d5221c5e05c4f88b9c&json=1&random=true&sep=3').text
+        '代理连接').text
     if resp.find('too many requests') == -1:
         resp1 = json.loads(resp)['data']
         http = str(resp1[0]["ip"]) + ":" + str(resp1[0]["port"])

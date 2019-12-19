@@ -2,69 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72cd49e5-2c57-4b53-a4da-637da6b57ea1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Master/temp10.py" beforeDir="false" afterPath="$PROJECT_DIR$/Master/temp10.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Master/temp14.py" beforeDir="false" afterPath="$PROJECT_DIR$/Master/temp14.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/biz/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/biz/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/Mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/Mysql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hq_toke.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/aes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/cipher-core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/crypto-js.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/docs/QuickStartGuide.wiki" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-base64.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-hex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-latin1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-utf16.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/enc-utf8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/evpkdf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/format-hex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/format-openssl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-md5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-ripemd160.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha224.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha256.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha384.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac-sha512.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/hmac.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/lib-typedarrays.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/md5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-cfb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-ctr-gladman.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-ctr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-ecb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/mode-ofb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-ansix923.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-iso10126.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-iso97971.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-nopadding.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-pkcs7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pad-zeropadding.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/pbkdf2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/rabbit-legacy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/rabbit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/rc4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/ripemd160.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha224.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha256.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha384.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/sha512.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/tripledes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/crypto-js/x64-core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp11.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/dbmysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/dbmysql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/token/hq_token.py" beforeDir="false" afterPath="$PROJECT_DIR$/token/hq_token.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -297,7 +237,7 @@
       <workItem from="1576716439154" duration="6079000" />
       <workItem from="1576722886816" duration="8211000" />
       <workItem from="1576735586268" duration="400000" />
-      <workItem from="1576736010811" duration="1249000" />
+      <workItem from="1576736010811" duration="1807000" />
     </task>
     <task id="LOCAL-00001" summary="优化selenuim以及增加人员的删除">
       <created>1575614418495</created>

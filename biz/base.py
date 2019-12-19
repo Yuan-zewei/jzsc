@@ -20,7 +20,7 @@ class Base():
         # 设置代理连接
         while True:
             resp1 = requests.get(
-                'http://api.ip.data5u.com/dynamic/get.html?order=dac8945cfa0501d5221c5e05c4f88b9c&json=1&random=true&sep=3')
+                '代理的连接')
             resp = resp1.text
             if str(resp1) == '<Response [200]>':
                 resp1 = json.loads(resp)['data']
@@ -40,25 +40,6 @@ class Base():
                     time.sleep(5)
         except Exception as e:
             print(e, '文件错误')
-    #破解源码加密的方法
-    # def jd_nx(self,data):
-    #     x = execjs.compile('''
-    #     function Aes(data) {
-    #         module.paths.push("\\Users\\admin\\AppData\\Roaming\\npm\\node_modules");
-    #         let CryptoJS=require('crypto-js');
-    #         var u= CryptoJS.enc.Utf8.parse("jo8j9wGw%6HbxfFn"),
-    #         d = CryptoJS.enc.Utf8.parse("0123456789ABCDEF");
-    #             e = CryptoJS.enc.Hex.parse(data);
-    #             n = CryptoJS.enc.Base64.stringify(e);
-    #           return  CryptoJS.AES.decrypt(n, u, {
-    #             iv: d,
-    #             mode: CryptoJS.mode.CBC,
-    #             padding: CryptoJS.pad.Pkcs7
-    #         }).toString(CryptoJS.enc.Utf8);
-    #     }
-    #            ''')
-    #     return x.call('Aes', f'{data}')
-
     def jd_nx(self,data):
         iv = b"0123456789ABCDEF"
         key = "jo8j9wGw%6HbxfFn".encode('utf-8')
