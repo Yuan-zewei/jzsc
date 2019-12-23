@@ -66,21 +66,20 @@ class jzscBiz2(base.Base):
                 print('没有数据可以爬取')
                 time.sleep(10)
             else:
-                print(a)
-                self.qyid = a[0]  # 公司eid
-                self.z = a[0]  # 公司名字
-                qw = self.gx_qyid()
-                self.qyid1=qw
+                self.qyid = a[0]#eid
+                self.z =a[2]#公司名字
+                qw = self.gx_qyid()#这个东西可以优化，在失败或者加载不出东西可以尝试更新，不用每次加载
+                self.qyid1=qw#qyid
                 if a[7]=='1':
                     self.jichu12()  # 基础信息的爬取
                 else:
                     print('基础信息爬取完毕')
                 if a[8]=='1':
-                    self.qyzz()  # 基础信息的爬取
+                    self.qyzz()  # 资质信息的爬取
                 else:
                     print('资质信息爬取完毕')
                 if a[9]=='1':
-                    self.qy_user()  # 基础信息的爬取
+                    self.qy_user()  # 人员信息的爬取
                 else:
                     print('人员信息爬取完毕')
                 # self.gcxmxx()
@@ -96,17 +95,19 @@ class jzscBiz2(base.Base):
             print('开始更新企业id')
             qyurl=f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/comp/list?complexname={self.z}&pg=0&pgsz=15&total=0'
             resp1 = requests.get(url=qyurl, headers=self.headers,proxies=self.ipz(),timeout=10)
-            asddd1 = self.jd_nx(data=f'{resp1.text}')
-            asddd2 = json.loads(asddd1)
-            print(asddd2)
-            if len(asddd2['data']['list'])==0:
-                print('没有这个公司异常')
-                Mysql.gxqy_fupa(cx_state='3', eid=self.qyid)
+            ew=resp1.text
+            if str(ew).find('服务器繁忙，请稍后重试') != -1:
+                print('服务器繁忙，请稍后重试')
             else:
-                qyid= asddd2['data']['list'][0]['QY_ID']
-                Mysql.update_qyid(qyurl=qyid,eid=self.qyid)#更新企业id
-                print('企业更新完毕')
-                return qyid
+                asddd2 = self.jd_nx(data=f'{resp1.text}')
+                if len(asddd2['data']['list'])==0:
+                    print('没有这个公司异常')
+                    Mysql.gxqy_fupa(cx_state='3', eid=self.qyid)
+                else:
+                    qyid= asddd2['data']['list'][0]['QY_ID']
+                    Mysql.update_qyid(qyurl=qyid,eid=self.qyid)#更新企业id
+                    print('企业更新完毕')
+                    return qyid
         except Exception as e:
             qq = str(e)
             if qq.find("HTTPConnectionPool") != -1:
@@ -123,25 +124,25 @@ class jzscBiz2(base.Base):
         # 基础信息
         try:
             qy_jichu = f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/comp/compDetail?compId={self.qyid1}'
-            resp1 = requests.get(url=qy_jichu, headers=self.headers,proxies=self.ip,timeout=10)
-            asddd1 = self.jd_nx(data=f'{resp1.text}')
-            asddd2 = json.loads(asddd1)
-            print(asddd2)
-            if asddd2['code'] != 200:
-                # self.hq_token(qyid=self.qyid1, name=self.z)#调用selenuim获得token值
-                Mysql.dele_token(token=self.jichu)
-                print(self.jichu)
-                print('token删除成功')
-                Mysql.token(token=self.jichu)
-                self.jichu = self.jichutoken()[0]
-                self.ip = {"http": "http://" + self.jichutoken()[1], "https": "https://" + self.jichutoken()[1]}
+            resp1 = requests.get(url=qy_jichu, headers=self.headers,proxies=self.ip,timeout=100)
+            if resp1.text.find('服务器繁忙，请稍后重试') != -1:
+                print('服务器繁忙，请稍后重试')
             else:
-                if asddd2['data'] == None:
-                    self.gx_qyid()
+                asddd2 = self.jd_nx(data=f'{resp1.text}')
+                if asddd2['code'] != 200:
+                    # self.hq_token(qyid=self.qyid1, name=self.z)#调用selenuim获得token值
+                    Mysql.dele_token(token=self.jichu)
+                    print('token删除成功')
+                    Mysql.token(token=self.jichu)
+                    self.jichu = self.jichutoken()[0]
+                    self.ip = {"http": "http://" + self.jichutoken()[1], "https": "https://" + self.jichutoken()[1]}
                 else:
-                    qyxx.qyjichu(asddd2['data']['compMap'], qyid=self.qyid)
-                    Mysql.update_qyjcxx(qy_jcxx_zt='0',eid=self.qyid)
-                    return '0'
+                    if asddd2['data'] == None:
+                        self.gx_qyid()
+                    else:
+                        qyxx.qyjichu(asddd2['data']['compMap'], qyid=self.qyid)
+                        Mysql.update_qyjcxx(qy_jcxx_zt='0',eid=self.qyid)
+                        return '0'
         except Exception as e:
             qq=str(e)
             if qq.find("HTTPConnectionPool")!=-1:
@@ -161,36 +162,35 @@ class jzscBiz2(base.Base):
             qy_zz = f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/comp/caDetailList?qyId={self.qyid1}&pg=0&pgsz=500'
             # qy_zz = f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/comp/caDetailList?qyId=0F0F0E060E0E0D0C0D0E0A0E0D0B09070B09&pg=0'
             resp2 = requests.post(url=qy_zz, headers=self.headers,proxies=self.ip,timeout=10)
-            asddd3 = self.jd_nx(data=f'{resp2.text}')
-            asddd4 = json.loads(asddd3)
-            print(asddd4)
-            if asddd4['code'] != 200:
-                # self.hq_token(qyid=self.qyid1, name=self.z)  # 调用selenuim获得token值
-                Mysql.dele_token(token=self.jichu)
-                print('token删除成功')
-                Mysql.token(token=self.jichu)
-                self.jichu = self.jichutoken()
-                self.ip = {"http": "http://" + self.jichutoken()[1], "https": "https://" + self.jichutoken()[1]}
+            if resp2.text.find('服务器繁忙，请稍后重试') != -1:
+                print('服务器繁忙，请稍后重试')
             else:
-                print(asddd4)
-                if asddd4['data'] == None:
-                    self.gx_qyid()
+                asddd4 = self.jd_nx(data=f'{resp2.text}')
+                if asddd4['code'] != 200:
+                    # self.hq_token(qyid=self.qyid1, name=self.z)  # 调用selenuim获得token值
+                    Mysql.dele_token(token=self.jichu)
+                    print('token删除成功')
+                    Mysql.token(token=self.jichu)
+                    self.jichu = self.jichutoken()
+                    self.ip = {"http": "http://" + self.jichutoken()[1], "https": "https://" + self.jichutoken()[1]}
                 else:
-                    print(asddd4)
-                    a123 = asddd4['data']['pageList']['list']
-                    if len(a123) != 0:
-                        p1 = 0
-                        for resp in a123:
-                            p1 += 1
-                            print(f'一共{len(a123)}个企业资质现在是第{p1}个企业资质')
-                            qyxx.qyzz(resp=resp, qyid=self.qyid)
-                        if p1 == len(a123):
-                            Mysql.updatet_qyzzzt(qyzzzt='0',eid=self.qyid)
-                            return '0'
+                    if asddd4['data'] == None:
+                        self.gx_qyid()
                     else:
-                        print('没有企业资质')
-                        Mysql.updatet_qyzzzt(qyzzzt='404', eid=self.qyid)
-                        return '404'
+                        a123 = asddd4['data']['pageList']['list']
+                        if len(a123) != 0:
+                            p1 = 0
+                            for resp in a123:
+                                p1 += 1
+                                print(f'一共{len(a123)}个企业资质现在是第{p1}个企业资质')
+                                qyxx.qyzz(resp=resp, qyid=self.qyid)
+                            if p1 == len(a123):
+                                Mysql.updatet_qyzzzt(qyzzzt='0',eid=self.qyid)
+                                return '0'
+                        else:
+                            print('没有企业资质')
+                            Mysql.updatet_qyzzzt(qyzzzt='404', eid=self.qyid)
+                            return '404'
         except Exception as e:
             qq = str(e)
             if qq.find("HTTPConnectionPool") != -1:
@@ -210,76 +210,72 @@ class jzscBiz2(base.Base):
             ry_url = f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/comp/regStaffList?qyId={self.qyid1}&pg=0&pgsz=5000'
             # print(ry_url)
             resp2 = requests.get(url=ry_url, headers=self.headers,proxies=self.ip,timeout=10)
-            asd3 = self.jd_nx(data=f'{resp2.text}')
-            asd4 = json.loads(asd3)
-            print('人员')
-            if asd4['data'] == None:
-                self.gx_qyid()
+            if resp2.text.find('服务器繁忙，请稍后重试') != -1:
+                print('服务器繁忙，请稍后重试')
             else:
-                ry_urlte = asd4['data']['pageList']['list']
-                if len(ry_urlte) == 0:
-                    print('该公司没有人员信息')
-                    Mysql.updateryzt(ryzt='404', eid=self.qyid)
-                    return '404'
+                asd4 = self.jd_nx(data=f'{resp2.text}')
+                if asd4['data'] == None:
+                    self.gx_qyid()
                 else:
-                    # asd=Mysql.selecttbl_qyname(eid=self.qyid)
-                    # Mysql.delete_tbl_user(qyid=self.qyid)  # 删除人员的基础信息
-                    # Mysql.deletetbl_user_zcxx1(qyid=self.z)
-                    a1 = Mysql.selectryurl_ys1(eid=self.qyid)
-                    print(a1,'-=-----------------------------------------')
-                    if a1[0]==None:
-                        a2=0
-                        po = 1
-                        Mysql.delete_tbl_user(qyid=self.qyid)
-                        Mysql.deletetbl_user_zcxx1(qyid=self.qyid)
-                        print('删除成功')
+                    ry_urlte = asd4['data']['pageList']['list']
+                    if len(ry_urlte) == 0:
+                        print('该公司没有人员信息')
+                        Mysql.updateryzt(ryzt='404', eid=self.qyid)
+                        return '404'
                     else:
-                        a2=int(a1[0])-1
-                        po =int(a1[0])
-                    # print(ry_urlte[int(a2)-1:])
-                    for res in ry_urlte[a2:]:
-                        print(res)
-                        print(f'--------------------------一共{len(ry_urlte)}个人++++第{po}个人--------------------------------')
-                        userid = uuid4()
-                        user = res['RY_ID']
-                        username = res['RY_NAME']
-                        ry_xinxi = f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/staff/staffDetail?staffId={user}'
-                        resp3 = requests.get(url=ry_xinxi, headers=self.headers,proxies=self.ip,timeout=10)
-                        asd5 = self.jd_nx(data=f'{resp3.text}')
-                        asd6 = json.loads(asd5)
-                        print(asd6)
-                        if asd6['code'] != 200:
-                            print(asd6)
-                            # self.hq_token(qyid=self.qyid1, name=self.z)#调用selenuim获得token值
-                            print(self.jichu)
-                            Mysql.dele_token(token=self.jichu)
-                            print('token删除成功')
-                            Mysql.token(token=self.jichu)
-                            self.jichu = self.jichutoken()[0]
-                            self.ip = {"http": "http://" + self.jichutoken()[1],
-                                       "https": "https://" + self.jichutoken()[1]}
-                            print(self.jichu)
-                            break
+                        # asd=Mysql.selecttbl_qyname(eid=self.qyid)
+                        # Mysql.delete_tbl_user(qyid=self.qyid)  # 删除人员的基础信息
+                        # Mysql.deletetbl_user_zcxx1(qyid=self.z)
+                        a1 = Mysql.selectryurl_ys1(eid=self.qyid)
+                        if a1==None:
+                            a2=0
+                            po = 1
+                            Mysql.delete_tbl_user(qyid=self.qyid)
+                            Mysql.deletetbl_user_zcxx1(qyid=self.qyid)
+                            print('删除成功')
                         else:
-                            qyxx.ryxx(resp=asd6['data']['staffMap'], qyid=self.qyid, user=userid)
-                            asd7 = asd6['data']['regCertList']
-                            print('人员注册信息',asd7)
-                            x=1
-                            for res in asd7:
-                                print(f'{username}一共有{len(asd7)}个注册信息正在爬取第{x}个注册信息')
-                                qyxx.ryxx_xinxi(resp=res,user=userid, zc_dwid=self.qyid)
-                                x+=1
-                            print('sddd',len(asd7),x-1)
-                            if len(asd7)==x-1:
-                                Mysql.updatery_page_zd(ry_page_zd=po, eid=self.qyid)  # 实时更新爬取的页数
-                                po += 1
+                            a2=int(a1)-1
+                            po =int(a1)
+                        # print(ry_urlte[int(a2)-1:])
+                        for res in ry_urlte[a2:]:
+                            print(f'--------------------------一共{len(ry_urlte)}个人++++第{po}个人--------------------------------')
+                            userid = uuid4()
+                            user = res['RY_ID']
+                            username = res['RY_NAME']
+                            ry_xinxi = f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/staff/staffDetail?staffId={user}'
+                            resp3 = requests.get(url=ry_xinxi, headers=self.headers,proxies=self.ip,timeout=10)
+                            if resp3.text.find('服务器繁忙，请稍后重试') != -1:
+                                print('服务器繁忙，请稍后重试')
                             else:
-                                pass
-                            if po-1 == len(ry_urlte):
-                                Mysql.updateryzt(ryzt='0', eid=self.qyid)#更新爬取状态
-                                return '0'
-                            else:
-                                pass
+                                asd6 = self.jd_nx(data=f'{resp3.text}')
+                                print(asd6)
+                                if asd6['code'] != 200:
+                                    print(asd6)
+                                    Mysql.dele_token(token=self.jichu)
+                                    print('token删除成功')
+                                    Mysql.token(token=self.jichu)
+                                    self.jichu = self.jichutoken()[0]
+                                    self.ip = {"http": "http://" + self.jichutoken()[1],
+                                               "https": "https://" + self.jichutoken()[1]}
+                                    break
+                                else:
+                                    qyxx.ryxx(resp=asd6['data']['staffMap'], qyid=self.qyid, user=userid)
+                                    asd7 = asd6['data']['regCertList']
+                                    x=1
+                                    for res in asd7:
+                                        print(f'{username}一共有{len(asd7)}个注册信息正在爬取第{x}个注册信息')
+                                        qyxx.ryxx_xinxi(resp=res,user=userid, zc_dwid=self.qyid)
+                                        x+=1
+                                    if len(asd7)==x-1:
+                                        Mysql.updatery_page_zd(ry_page_zd=po, eid=self.qyid)  # 实时更新爬取的页数
+                                        po += 1
+                                    else:
+                                        pass
+                                    if po-1 == len(ry_urlte):
+                                        Mysql.updateryzt(ryzt='0', eid=self.qyid)#更新爬取状态
+                                        return '0'
+                                    else:
+                                        pass
         except Exception as e:
             qq = str(e)
             if qq.find("HTTPConnectionPool") != -1:
@@ -292,48 +288,7 @@ class jzscBiz2(base.Base):
             else:
                 print('不存在')
                 print(e, '人员信息错误')
-    def gcxmxx(self):
-        try:
-            qy_gcxm_list = f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/comp/compPerformanceListSys?qy_id={self.qyid1}&pg=0&pgsz=15'
-            resp2 = requests.post(url=qy_gcxm_list, headers=self.headers)
-            asddd3 = self.jd_nx(data=f'{resp2.text}')
-            print(asddd3)
-            asddd4 = json.loads(asddd3)
-            if asddd4['code'] != 200:
-                # self.hq_token(qyid=self.qyid1, name=self.z)  # 调用selenuim获得token值
-                Mysql.token(token=self.jichu)
-                self.jichu = self.jichutoken()[0]
-            # print('----工程项目列表！！!\n', asddd4)
-            gcxm_datas = asddd4['data']['list']
-            if len(gcxm_datas) == 0:
-                print('该公司没有工程项目信息')
-                return '404'
-            else:
-                self.a = 0
-                for res1 in gcxm_datas:
-                    self.a += 1
-                    print(f'----------------------------一共{len(gcxm_datas)}个工程项目现在是第{self.a}个工程项目-------------------------')
-                    gcxm_url_ID = res1['ID']  # 工程项目的详情页连接
-                    qy_gcxm = f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/project/projectDetail?id={gcxm_url_ID}'
-                    resp3 = requests.post(url=qy_gcxm, headers=self.headers)
-                    asddd5 = self.jd_nx(data=f'{resp3.text}')
-                    asddd6 = json.loads(asddd5)
-                    if asddd6['code'] != 200:
-                        # self.hq_token(qyid=self.qyid1, name=self.z)  # 调用selenuim获得token值
-                        Mysql.token(token=self.jichu)
-                        self.jichu = self.jichutoken()[0]
-                    gcxm_data = asddd6['data']
-                    if len(gcxm_data) > 0:
-                        print(f'第{self.a}个项目{gcxm_data["PRJNAME"]}的相关信息！！！！！')
-                        print(gcxm_data)
-                        qyxx.gcxm(resp=gcxm_data, qyid=self.qyid, i=self.a)  # 工程项目的部分信息
-                        qyxx.gcxm_jcxx(resp=gcxm_data, qyid=self.qyid)                       # 工程项目的基础信息
-                        qyxx.gcxm_weizhi(resp=gcxm_data, qyid=self.qyid)                     # 工程项目的未知信息
-                if self.a==len(gcxm_datas):
-                    return '0'
-        except Exception as e:
-            print(e)
-            self.gcxmxx()
+#工程项目没有写完测试中
 
 if __name__ == '__main__':
     while True:

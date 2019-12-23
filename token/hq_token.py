@@ -63,16 +63,15 @@ def jd_nx(data):
     key = "jo8j9wGw%6HbxfFn".encode('utf-8')
     cipher = AES.new(key, AES.MODE_CBC, iv)
     plain = cipher.decrypt(a2b_hex(data))
-    return bytes.decode(plain).rsplit('\0')
+    qw = bytes.decode(plain).rsplit('\0')
+    qw1 = json.loads(re.subn(r'\x02|\x0f|\x06|\x0b|\x05|\x08\x07', '', str(qw[0]))[0])
+    return qw1
 #更新企业qyid
 def gx_qyid(z,eid):
     print('开始更新企业id')
     qyurl = f'http://jzsc.mohurd.gov.cn/api/webApi/dataservice/query/comp/list?complexname={z}&pg=0&pgsz=15&total=0'
     resp1 = requests.get(url=qyurl, headers=headers)
-    asddd1 = jd_nx(data=f'{resp1.text}')
-    qw2 = asddd1[0][0:-5]
-    asddd2 = json.loads(qw2)
-    print(asddd2)
+    asddd2 = jd_nx(data=f'{resp1.text}')
     if len(asddd2['data']['list']) == 0:
         print('没有这个公司异常')
         Mysql.gxqy_fupa(cx_state='3', eid=eid)
@@ -82,7 +81,7 @@ def gx_qyid(z,eid):
         return qyid
 #selenuim
 def selenu(url,qyname,ip):
-    print(f'第1次尝试')
+    print(f'开始尝试')
     caps = DesiredCapabilities.CHROME
     caps['loggingPrefs'] = {'performance': 'ALL'}
     caps = {
@@ -101,11 +100,12 @@ def selenu(url,qyname,ip):
     }
     chromeOptions = webdriver.ChromeOptions()
     chromeOptions.add_experimental_option('w3c', False)
-    chromeOptions.add_experimental_option('excludeSwitches', ['enable-automation'])
-    chromeOptions.add_argument(f'--proxy-server={ip}')#隐藏浏览器
+    chromeOptions.add_experimental_option('excludeSwitches', ['enable-automation'])#开始实验性功能非常牛叉的参数,防止网页发现你是selenuim
+    chromeOptions.add_argument('--headless')
+    chromeOptions.add_argument(f'--proxy-server=http://{ip}')#隐藏浏览器
     driver = webdriver.Chrome(options=chromeOptions,desired_capabilities=caps)
-    driver.maximize_window()#浏览器
-    # driver.set_page_load_timeout(30)
+    driver.maximize_window()
+    driver.set_page_load_timeout(40)#超过这个时间直接报错
     driver.get(f'http://jzsc.mohurd.gov.cn/data/company/detail?id={url}')
     a=1
     while True:
@@ -114,40 +114,30 @@ def selenu(url,qyname,ip):
             he1 = driver.page_source
             time.sleep(1)
             if he1.find('重新验证')!=-1 and he1.find(f'{qyname}')==-1:
-                # driver.switch_to.window(driver.window_handles[0])
+                # driver.switch_to.window(driver.window_handles[0])#切换窗口发现没啥用
                 time.sleep(3)
                 tijiao = driver.find_element_by_xpath('//*[@id="app"]/div/header/div[5]/div/div[3]/div/button[1]/span')
                 driver.execute_script("arguments[0].click();", tijiao)
                 time.sleep(1)
-                # driver.switch_to.window(driver.window_handles[0])
+                # driver.switch_to.window(driver.window_handles[0])#切换窗口
                 hem = driver.page_source
                 time.sleep(1)
                 for ui in range(0,6):
                     if hem.find('请完成安全验证')!=-1 or hem.find(f'{qyname}')==-1:
                         current_time = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
                         current_time1 = time.strftime("%Y-%m-%d", time.localtime(time.time()))
-                        print(current_time)
-                        print(current_time1)
-                        # above = driver.find_element_by_class_name("yidun_tips__icon")
-                        # ActionChains(driver).move_to_element(above).perform()
                         time.sleep(0.5)
-                        # 获取区域块
                         imgelement = driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]')
-                        # 图片坐标
                         locations = imgelement.location
-                        # 图片大小
                         sizes = imgelement.size
-                        # 构造指数的位置
                         rangle = (
                             int(locations['x'] + 20), int(locations['y'] + 20),
                             int(locations['x'] + sizes['width'] - 20),
                             int(locations['y'] + sizes['height'] - 20))
-                        print(rangle)
-                        pfilename = 'C:\\Users\\admin\\Desktop\\新建文件夹\\xinjianshe1.3\\image'# 本地图片文件路径 来替换 a.jpg 有时WIN系统须要//
+                        pfilename = '.\\image'#路径错的话使用绝对路径
                         save_path = pfilename + '\\' + current_time1 + '_' + current_time + '.png'
                         time.sleep(1.5)
                         driver.save_screenshot(save_path)
-                        # 打开截图切割
                         img = Image.open(save_path)
                         jpg = img.convert('RGB')
                         jpg = img.crop(rangle)
@@ -155,40 +145,37 @@ def selenu(url,qyname,ip):
                         time.sleep(1)
                         jpg.save(path)
                         print("图片截取成功!")
-                        chaojiying = Chaojiying_Client('账号', '密码',
-                                                       '软件ID')  # 用户中心>>软件ID 生成一个替换 96001
-                        im = open(path,
-                                  'rb').read()  # 本地图片文件路径 来替换 a.jpg 有时WIN系统须要//
+                        chaojiying = Chaojiying_Client('账号', '密码','软件id')  # 用户中心>>软件ID
+                        im = open(path,'rb').read()
                         zuo=chaojiying.PostPic(im, 9103)
                         groups = zuo.get('pic_str').split('|')
-                        locations_chaojiying = [[int(number) for number in group.split(',')] for group in groups]#获得三个点的坐标
-                        if len(locations_chaojiying) > 0:  # 判断是否获取到坐标
+                        locations_chaojiying = [[int(number) for number in group.split(',')] for group in groups]
+                        if len(locations_chaojiying) > 0:
                             element = WebDriverWait(driver, 5, 0.5).until(
-                                EC.presence_of_element_located((By.CLASS_NAME, 'yidun_bg-img')))  # 获取图片元素
+                                EC.presence_of_element_located((By.CLASS_NAME, 'yidun_bg-img')))
                             ActionChains(driver).move_to_element(element)
                             time.sleep(0.5)
                             location_x = 0
                             location_y = 0
-                            pyautogui.moveTo(locations['x'] + 27, int(locations['y'] + 27), duration=0.3)  # 鼠标定位到图片左上角
+                            pyautogui.moveTo(locations['x'] + 25, int(locations['y'] + 96), duration=0.3)#驱动鼠标操作，可以使用，只是看看
                             for location in locations_chaojiying:
                                 pyautogui.moveRel(location[0] - location_x, location[1] - location_y,
-                                                  duration=0.6)  # 根据获取的坐标移动
+                                                  duration=0.6)
                                 driver.execute(Command.MOVE_TO, {'xoffset': location[0], 'yoffset': location[1]})
                                 print(" 点击坐标 " + str(location[0]), str(location[1]))
                                 ActionChains(driver).move_to_element_with_offset(element, location[0],
                                                                                  location[
-                                                                                     1] + 2).click().perform()  # 模拟点击
-                                time.sleep(0.9)
+                                                                                     1] + 2).click().perform()
+                                time.sleep(random.randint(1,3)+random.random())
                                 location_x = location[0]
                                 location_y = location[1]
-                        time.sleep(5)
+                        time.sleep(10)#防止网页加载速度过慢拿不到公司名字
                         print('移动成功')
                         hem12=driver.page_source
                         if hem12.find(f'{qyname}')!=-1:
                             print('跳过验证码')
                             logs = [json.loads(log['message'])['message'] for log in driver.get_log('performance')]
                             token=re.findall("accessToken': '(.*?)==', 'timeout': '30000'",str(logs))[-1]+'=='
-                            print(token)
                             a21=Mysql.seletoken(token=token)
                             if a21:
                                 print('token已存在跳过')
@@ -202,13 +189,15 @@ def selenu(url,qyname,ip):
                                     time.sleep(5)
                                 else:
                                     driver.refresh()
+                                    break
                         else:
-                            print('，没有这个公司重新尝试')
-                            driver.refresh()
+                            print('验证失败或者没有这个公司重新尝试')
+                            time.sleep(3)
+                            break
+                            # driver.refresh()
             elif he1.find(f'{qyname}') != -1:
                 logs = [json.loads(log['message'])['message'] for log in driver.get_log('performance')]
                 token = re.findall("accessToken': '(.*?)==', 'timeout': '30000'", str(logs))[-1] + '=='
-                print(token)
                 a21 = Mysql.seletoken(token=token)
                 if a21:
                     print('token已存在跳过')
@@ -223,31 +212,29 @@ def selenu(url,qyname,ip):
                         time.sleep(5)
                     else:
                         driver.refresh()
-                        # break
+                        break
             elif he1.find(f'{qyname}')==-1:
                 print(f'2第{a}次刷新')
                 driver.refresh()
                 break
-                # a += 1
             else:
                 time.sleep(1.5)
                 driver.refresh()
+                break
         except Exception as e:
             print(e)
             driver.quit()
             break
 def ipz():
     # 设置代理连接
-    resp = requests.get(
-        '代理连接').text
-    if resp.find('too many requests') == -1:
-        resp1 = json.loads(resp)['data']
-        http = str(resp1[0]["ip"]) + ":" + str(resp1[0]["port"])
-        ip = {"http": "http://" + http, "https": "https://" + http}
-        return ip
-    else:
-        print(f'-----------------------------------{resp}========================================================')
-        time.sleep(0.5)
+    while True:
+        resp = requests.get('代理连接').text
+        if resp.find('data') != -1:
+            resp1 = json.loads(resp)['data']
+            http = str(resp1[0]["ip"]) + ":" + str(resp1[0]["port"])
+            return http
+        else:
+            time.sleep(5)
 while True:
     a = Mysql.qiyexx_url(bh='1')
     for x in a:
@@ -255,7 +242,7 @@ while True:
             qyid = x[0]  # 公司eid
             z = x[2]  # 公司名字
             qyid1 = x[3]#qyid
-            qw=gx_qyid(z=z,eid=qyid)
-            selenu(qw,z,ipz()['http'])
+            qw=gx_qyid(z=z,eid=qyid)#这个东西可以优化，在失败或者加载不出东西可以尝试更新，不用每次加载
+            selenu(qw,z,ipz())
         except Exception as E:
             print(E)

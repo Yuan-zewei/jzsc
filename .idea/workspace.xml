@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72cd49e5-2c57-4b53-a4da-637da6b57ea1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Master/temp14.py" beforeDir="false" afterPath="$PROJECT_DIR$/Master/temp14.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Master/temp10.py" beforeDir="false" afterPath="$PROJECT_DIR$/Master/temp10.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/biz/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/biz/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/token/hq_token.py" beforeDir="false" afterPath="$PROJECT_DIR$/token/hq_token.py" afterDir="false" />
     </list>
@@ -237,7 +238,8 @@
       <workItem from="1576716439154" duration="6079000" />
       <workItem from="1576722886816" duration="8211000" />
       <workItem from="1576735586268" duration="400000" />
-      <workItem from="1576736010811" duration="1807000" />
+      <workItem from="1576736010811" duration="2329000" />
+      <workItem from="1577085854737" duration="482000" />
     </task>
     <task id="LOCAL-00001" summary="优化selenuim以及增加人员的删除">
       <created>1575614418495</created>
@@ -274,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575964872506</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="优化代码，修改若干bug">
+      <created>1576737848126</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576737848126</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +308,8 @@
     <MESSAGE value="增加换IP方法，以及设置整套程序都是同个ip" />
     <MESSAGE value="增加注释." />
     <MESSAGE value="修改获取ip的方法，增加多线程获取token的测试，修改数据库中存储有效期的问题，以及修改了若干bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改获取ip的方法，增加多线程获取token的测试，修改数据库中存储有效期的问题，以及修改了若干bug" />
+    <MESSAGE value="优化代码，修改若干bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化代码，修改若干bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -308,16 +318,6 @@
           <url>file://$PROJECT_DIR$/dao/Mysql.py</url>
           <line>304</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/dao/Mysql.py</url>
-          <line>372</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Master/temp10.py</url>
-          <line>69</line>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
